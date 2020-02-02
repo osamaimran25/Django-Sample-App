@@ -40,7 +40,7 @@ def create_cat(request):
 
     return JsonResponse({"Success": "Record Saved", "id": str(cat.id)})
 
-
+@token_required
 @csrf_exempt
 def update_cat(request, pk):
 
@@ -67,7 +67,7 @@ def update_cat(request, pk):
 
     return JsonResponse({"Success": "Record Updated"})
 
-
+@token_required
 @csrf_exempt
 def delete_cat(request, pk):
 
@@ -84,7 +84,7 @@ def delete_cat(request, pk):
 
     return JsonResponse({"Success":"Cat Deleted...!"})
 
-
+@token_required
 @csrf_exempt
 def get_cat(request, pk):
 
@@ -103,7 +103,7 @@ def get_cat(request, pk):
 
 
     return JsonResponse(cat,safe=False)
-
+@token_required
 @csrf_exempt
 def list_cat(request):
 
@@ -128,6 +128,7 @@ def list_cat(request):
 #############################
 #### Dog CRUD Opereations ###
 ############################
+@token_required
 @csrf_exempt
 def create_dog(request):
 
@@ -153,7 +154,7 @@ def create_dog(request):
 
     return JsonResponse({"Success": "Record Saved", "id": str(dog.id)})
 
-
+@token_required
 @csrf_exempt
 def update_dog(request, pk):
 
@@ -180,7 +181,7 @@ def update_dog(request, pk):
 
     return JsonResponse({"Success": "Record Updated"})
 
-
+@token_required
 @csrf_exempt
 def delete_dog(request, pk):
 
@@ -197,7 +198,7 @@ def delete_dog(request, pk):
 
     return JsonResponse({"Success":"Dog Deleted...!"})
 
-
+@token_required
 @csrf_exempt
 def get_dog(request, pk):
 
@@ -216,7 +217,7 @@ def get_dog(request, pk):
 
 
     return JsonResponse(dog,safe=False)
-
+@token_required
 @csrf_exempt
 def list_dog(request):
 
