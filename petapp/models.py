@@ -6,8 +6,7 @@ from django.db import models
 class Owner(models.Model):
     id              = models.AutoField(primary_key=True)
     name            = models.CharField(max_length=255)
-    date_of_birth   = models.DateField()
-
+    password        = models.CharField(max_length=255)
 
 class Cat(models.Model):
     id              = models.AutoField(primary_key=True)
